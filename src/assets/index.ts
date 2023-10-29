@@ -1,0 +1,9 @@
+export { default as menu } from "./menu.svg";
+export { default as close } from "./close.svg";
+export { default as curve } from "./curve.svg";
+export { default as light } from "./light.png";
+export { default as link } from "./link.png";
+export { default as spark } from "./spark.png";
+export { default as mobileCurve } from "./mobileCurve.svg";
+export { default as bobble } from "./bobble.png";
+export { default as man } from "./man.png";
