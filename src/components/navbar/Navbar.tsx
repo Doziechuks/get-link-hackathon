@@ -3,10 +3,16 @@ import styles from "./Navbar.module.less";
 import { Link } from "react-router-dom";
 import { menu, close } from "../../assets";
 import { CustomButton } from "..";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Navbar = () => {
   const [openNavbar, setOpenNavbar] = useState(false);
   const navbarRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -26,7 +32,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={styles.container}>
+    <nav className={styles.container} data-aos="slide-down">
       <Link to="/" className={styles.logo}>
         get<span>linked</span>
       </Link>
