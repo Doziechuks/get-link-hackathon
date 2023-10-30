@@ -1,10 +1,12 @@
 import styles from "./Home.module.less";
-import { Header } from "../../components";
+import { Header, Idea, Rules } from "../../components";
 
 const Home = () => {
   return (
     <main className={styles.container}>
       <Header />
+      <Idea />
+      <Rules />
     </main>
   );
 };

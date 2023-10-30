@@ -7,3 +7,5 @@ export { default as spark } from "./spark.png";
 export { default as mobileCurve } from "./mobileCurve.svg";
 export { default as bobble } from "./bobble.png";
 export { default as man } from "./man.png";
+export { default as idea } from "./idea.png";
+export { default as lady } from "./lady.png";
