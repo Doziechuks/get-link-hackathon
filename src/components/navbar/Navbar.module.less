@@ -3,7 +3,8 @@
   border-bottom: 1px rgba(255, 255, 255, 0.18) solid;
   width: 100%;
   padding: 0 8rem;
-  height: 6rem;
+  padding-top: 3.9rem;
+  padding-bottom: 1.6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,7 +56,7 @@
     display: none;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 900px) {
     .optionsWrapper {
       // display: none;
       border-radius: 8px;
@@ -105,8 +106,24 @@
       }
     }
   }
+  @media screen and (max-width: 1200px) {
+    padding: 0 3rem;
+    padding-top: 3.9rem;
+    padding-bottom: 1.6rem;
+    .logo {
+      font-size: 1.8rem;
+    }
+    .optionsWrapper {
+      gap: 2rem;
+      .options {
+        gap: 1.5rem;
+      }
+    }
+  }
   @media screen and (max-width: 600px) {
     padding: 0 3rem;
+    padding-top: 2.9rem;
+    padding-bottom: 1rem;
     .logo {
       font-size: 1.5rem;
     }

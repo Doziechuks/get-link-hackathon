@@ -1,16 +1,17 @@
 .container {
-  border: 1px solid red;
+  // border: 1px solid red;
   border-bottom: 1px rgba(255, 255, 255, 0.18) solid;
   width: 100%;
   background: var(--deep-blue-color);
+  background-blend-mode: hard-light;
   .highlight {
-    border: 1px red solid;
+    // border: 1px red solid;
     width: 100%;
     max-width: 44rem;
     min-height: 2.75rem;
     margin-left: auto;
-    margin-bottom: 3.5rem;
-    margin-right: 4rem;
+    margin-bottom: 2.5rem;
+    margin-right: 3.4rem;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -18,10 +19,10 @@
     @media screen and (max-width: 768px) {
       max-width: fit-content;
       margin: 0 auto;
-      margin-bottom: 3.5rem;
+      margin-bottom: 2.5rem;
     }
     span {
-      border: 1px white solid;
+      // border: 1px white solid;
       width: 100%;
       height: 100%;
       color: #fff;
@@ -55,35 +56,44 @@
     }
   }
   .wrapper {
-    border: 1px white solid;
+    // border: 1px white solid;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    // gap: 1rem;
+    justify-content: space-between;
+    padding-left: 8rem;
+    @media screen and (max-width: 1356px) {
+      padding-left: 3rem;
+    }
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+      padding: 0;
+    }
     .writeupBox {
-      border: 1px white solid;
+      // border: 1px white solid;
       width: 100%;
-      max-width: 45rem;
-      margin-left: 8rem;
+      max-width: 39rem;
+      @media screen and (max-width: 1024px) {
+        // border: 1px white solid;
+        max-width: calc(45%);
+      }
       .headingTitle {
-        border: 1px red solid;
+        // border: 1px red solid;
         width: 100%;
-        margin-bottom: 4.7rem;
+        margin-bottom: 2rem;
         .title {
-          border: 1px red solid;
+          // border: 1px red solid;
           width: 100%;
 
           h1 {
             width: 100%;
-            border: 1px red solid;
+            // border: 1px red solid;
             color: #fff;
             font-family: var(--heading-font-family);
-            font-size: 4rem;
-            // width: max-content;
+            font-size: 5rem;
             font-style: normal;
             font-weight: 700;
-            line-height: normal;
+            line-height: 6.6rem;
             position: relative;
             span {
               color: var(--light-purple-color);
@@ -91,28 +101,83 @@
             .light {
               position: absolute;
               top: -2.8rem;
-              right: 2.5rem;
+              right: 3rem;
             }
             .titleImgBox {
-              border: 1px red solid;
-              display: flex;
+              // border: 1px red solid;
+              display: inline;
               align-items: center;
               justify-content: center;
               position: absolute;
-              bottom: 1rem;
-              right: -7rem;
+              bottom: 0rem;
+              right: -6rem;
               z-index: 5;
               img {
-                &:last-child {
-                  display: block;
-                  width: 4rem;
+                width: 4rem;
+              }
+            }
+            @media screen and (max-width: 1276px) {
+              // border: 1px white solid;
+              width: 40rem;
+              .light {
+                right: 4rem;
+              }
+              .titleImgBox {
+                right: -4.5rem;
+                img {
+                  margin-bottom: -0.5rem;
+                }
+              }
+            }
+            @media screen and (max-width: 1024px) {
+              width: 27rem;
+              // border: 1px white solid;
+              font-size: 3.3rem;
+              line-height: normal;
+              .light {
+                width: 25px;
+                height: 35px;
+                top: -0.9rem;
+                right: 3.7rem;
+              }
+              .titleImgBox {
+                right: -3.5rem;
+                img {
+                  // border: 1px red solid;
+                  width: 3rem;
+                  margin-bottom: -0.5rem;
+                }
+              }
+            }
+            @media screen and (max-width: 900px) {
+              max-width: 350px;
+              margin: 0 auto;
+              text-align: center;
+              font-size: 2rem;
+              line-height: normal;
+              .light {
+                width: 18px;
+                height: 26px;
+                top: -1rem;
+                right: 4.5rem;
+              }
+              .titleImgBox {
+                position: static;
+                bottom: 0;
+                right: 0;
+                align-items: flex-end;
+                // justify-content: center;
+                img {
+                  // border: 1px red solid;
+                  width: 3rem;
+                  margin-bottom: -1rem;
                 }
               }
             }
           }
         }
         p {
-          border: 1px red solid;
+          // border: 1px red solid;
           width: 100%;
           max-width: 522px;
           color: #fff;
@@ -122,25 +187,39 @@
           font-weight: 400;
           line-height: 2rem;
           margin-top: 0.5rem;
-          margin-bottom: 2rem;
+          margin-bottom: 1rem;
+          @media screen and (max-width: 1024px) {
+            font-size: 1rem;
+          }
+          @media screen and (max-width: 900px) {
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+          }
+        }
+        @media screen and (max-width: 900px) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
         }
       }
       .timerBox {
-        border: 1px red solid;
+        // border: 1px red solid;
         width: 100%;
         max-width: fit-content;
         display: flex;
         align-items: center;
         div {
-          border: 1px red solid;
+          // border: 1px white solid;
           color: #fff;
           font-family: var(--num-font-family);
           font-size: 4rem;
           font-style: normal;
           font-weight: 400;
-          line-height: 5rem;
+          line-height: normal;
           margin-right: 2rem;
-          align-self: flex-start;
           &:last-child {
             margin-right: 0;
           }
@@ -149,25 +228,51 @@
             font-size: 14px;
           }
         }
+        @media screen and (max-width: 900px) {
+          margin: 0 auto;
+          div {
+            font-size: 3rem;
+          }
+        }
+      }
+      @media screen and (max-width: 900px) {
+        max-width: 100%;
+        padding: 0 0.5rem;
+        margin-bottom: 1rem;
       }
     }
     .imgBox {
-      border: 1px red solid;
+      // border: 1px red solid;
       width: 100%;
-      max-width: 52rem;
-      height: 45rem;
+      max-width: 45rem;
+      height: 38rem;
       position: relative;
-      .bobble {
-        border: 1px red solid;
+      @media screen and (max-width: 1024px) {
+        // border: 1px white solid;
+        height: 30rem;
+        max-width: 55%;
+      }
+      .man {
         width: 100%;
-        max-width: 41rem;
-        height: 40rem;
+        height: 100%;
+      }
+      .bobble {
+        // border: 1px red solid;
+        width: 100%;
+        max-width: 38rem;
+        height: 32rem;
         flex-shrink: 0;
         position: absolute;
-        top: 0;
+        top: 0rem;
+        @media screen and (max-width: 1024px) {
+          height: 28rem;
+          max-width: 30rem;
+        }
         img {
-          // border: 1px red solid;
-          border-radius: 50%;
+          width: 100%;
+          height: 100%;
+          // border-radius: 50%;
+          object-fit: cover;
           // animation: imgRotate 20s linear infinite;
           @keyframes imgRotate {
             from {
@@ -179,82 +284,23 @@
           }
         }
       }
-    }
-    @media screen and (max-width: 1100px) {
-      // justify-content: space-between;
-      gap: 0;
-      .imgBox {
-        max-width: 32rem;
-        height: 35rem;
-        img {
-          width: 100%;
-          height: 100%;
-        }
+      @media screen and (max-width: 900px) {
+        // border: 1px red solid;
+        max-width: 100%;
+        height: 40rem;
         .bobble {
-          max-width: 31rem;
+          max-width: 40rem;
           height: 30rem;
-          object-fit: cover;
+        }
+      }
+      @media screen and (max-width: 650px) {
+        max-width: 100%;
+        height: 23rem;
+        .bobble {
+          max-width: 21rem;
+          height: 20.3rem;
         }
       }
     }
   }
 }
-
-// .title1 {
-//           border: 1px red solid;
-//           width: 100%;
-//           max-width: fit-content;
-//           height: 7rem;
-//           position: relative;
-//           img {
-//             position: absolute;
-//             top: -2.5rem;
-//             right: 2rem;
-//           }
-//           h1 {
-// color: #fff;
-// font-family: var(--heading-font-family);
-// font-size: 5rem;
-// width: max-content;
-// font-style: normal;
-// font-weight: 700;
-// line-height: normal;
-// letter-spacing: -4px;
-//           }
-//         }
-//         .title2 {
-//           border: 1px red solid;
-//           position: relative;
-//           width: 100%;
-//           max-width: fit-content;
-//           height: 7rem;
-//           display: flex;
-//           h1 {
-//             color: #fff;
-//             font-family: var(--heading-font-family);
-//             font-size: 5rem;
-//             font-style: normal;
-//             font-weight: 700;
-//             line-height: normal;
-//             letter-spacing: -4px;
-//             span {
-//               color: var(--light-purple-color);
-//             }
-//           }
-//           .titleImgBox {
-//             border: 1px red solid;
-//             display: flex;
-//             align-items: center;
-//             justify-content: center;
-//             position: absolute;
-//             bottom: 1rem;
-//             right: -10rem;
-//             z-index: 5;
-//             img {
-//               &:last-child {
-//                 display: block;
-//                 width: 4rem;
-//               }
-//             }
-//           }
-//         }
