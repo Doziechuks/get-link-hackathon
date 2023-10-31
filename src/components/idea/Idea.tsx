@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 
 const Idea = () => {
   useEffect(() => {
-    Aos.init({ duration: 2000 });
+    Aos.init({ duration: 1000 });
   }, []);
   return (
     <section className={styles.container}>

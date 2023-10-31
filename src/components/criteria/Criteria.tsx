@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 
 const Criteria = () => {
   useEffect(() => {
-    Aos.init({ duration: 3000 });
+    Aos.init({ duration: 1000 });
   }, []);
   return (
     <section className={styles.container}>

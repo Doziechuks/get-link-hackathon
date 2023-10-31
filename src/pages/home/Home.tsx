@@ -1,5 +1,5 @@
 import styles from "./Home.module.less";
-import { Criteria, Header, Idea, Rules } from "../../components";
+import { Criteria, Header, Idea, Rules, Faq } from "../../components";
 
 const Home = () => {
   return (
@@ -8,6 +8,7 @@ const Home = () => {
       <Idea />
       <Rules />
       <Criteria />
+      <Faq />
     </main>
   );
 };

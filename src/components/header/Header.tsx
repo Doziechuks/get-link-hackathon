@@ -16,7 +16,7 @@ import { CustomButton } from "..";
 
 const Header = () => {
   useEffect(() => {
-    Aos.init({ duration: 2000 });
+    Aos.init({ duration: 1000 });
   }, []);
   return (
     <header className={styles.container}>
