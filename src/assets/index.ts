@@ -9,3 +9,5 @@ export { default as bobble } from "./bobble.png";
 export { default as man } from "./man.png";
 export { default as idea } from "./idea.png";
 export { default as lady } from "./lady.png";
+export { default as ellipse } from "./criteria-ellipse.svg";
+export { default as criteria } from "./criteria-illustrator.png";
