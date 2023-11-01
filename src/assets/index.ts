@@ -24,3 +24,7 @@ export { default as paybox } from "./Paybox.png";
 export { default as winwise } from "./Winwise logo White colour 1.png";
 export { default as wisper } from "./wisper logo white.png";
 export { default as vizual } from "./vizual.png";
+export { default as trophy } from "./trophy.png";
+export { default as gold_medal } from "./gold_medal 1.png";
+export { default as silver_medal } from "./silver_medal 1.png";
+export { default as bronze_medal } from "./bronze_medal 1.png";

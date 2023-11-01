@@ -1,0 +1,217 @@
+.container {
+  // border: 1px red solid;
+  width: 100%;
+  padding: 4.6rem 0;
+  @media screen and (max-width: 1000px) {
+    padding: 1.5rem;
+  }
+  .heading {
+    // border: 1px red solid;
+    width: 100%;
+    max-width: max-content;
+    margin-right: 15rem;
+    margin-left: auto;
+    margin-bottom: 7.2rem;
+    h3 {
+      // border: 1px red solid;
+      width: 100%;
+      max-width: 10.9rem;
+      color: #fff;
+      font-family: var(--heading-font-family);
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 1rem;
+      span {
+        color: var(--light-purple-color);
+      }
+    }
+    p {
+      // border: 1px red solid;
+      width: 100%;
+      max-width: 25.1rem;
+      color: #fff;
+      font-family: var(--text-font-family);
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.7rem; /* 27.344px */
+    }
+    @media screen and (max-width: 1000px) {
+      max-width: 100%;
+      margin: 0;
+      margin-bottom: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      h3 {
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      h3 {
+        font-size: 1.25rem;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+  .wrapper {
+    // border: 1px red solid;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4rem;
+    .trophyBox {
+      // border: 1px red solid;
+      width: 548px;
+      height: 482px;
+      flex-shrink: 0;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .medalBox {
+      // border: 1px red solid;
+      width: 100%;
+      max-width: fit-content;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .first,
+      .second,
+      .third {
+        width: 212px;
+        height: 296px;
+        border-radius: 0.5rem;
+        border: 1px solid #d434fe;
+        background: rgba(212, 52, 254, 0.12);
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        flex-shrink: 0;
+        position: relative;
+        img {
+          position: absolute;
+          z-index: 3;
+        }
+        div {
+          // border: 1px red solid;
+          width: 100%;
+          max-width: fit-content;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-end;
+          h6 {
+            // border: 1px red solid;
+            text-align: center;
+            color: #fff;
+            font-family: var(--text-font-family);
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 700;
+            // line-height: 216.4%; /* 77.904px */
+            span {
+              font-weight: 600;
+            }
+          }
+          span {
+            color: #d434fe;
+            font-family: var(--text-font-family);
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 216.4%; /* 69.248px */
+          }
+        }
+      }
+      .third,
+      .second {
+        img {
+          right: 50%;
+          transform: translateX(50%);
+          top: -25%;
+        }
+      }
+      .third {
+        img {
+          top: -30%;
+        }
+      }
+      .first {
+        height: 347px;
+        margin: 0 1.9rem;
+        margin-bottom: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid #903aff;
+        background: rgba(144, 58, 255, 0.12);
+        img {
+          top: -38%;
+          right: 50%;
+          transform: translateX(50%);
+        }
+      }
+    }
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+      gap: 0;
+      .trophyBox {
+        width: 100%;
+        height: auto;
+        margin-bottom: 8rem;
+      }
+    }
+    @media screen and (max-width: 900px) {
+      .trophyBox {
+        margin-bottom: 5rem;
+      }
+      .medalBox {
+        max-width: 100%;
+        .first,
+        .second,
+        .third {
+          width: 90.007px;
+          height: 125.671px;
+          flex-shrink: 0;
+          img {
+            width: 125.671px;
+            height: 125.671px;
+            flex-shrink: 0;
+          }
+          div {
+            h6 {
+              font-size: 12px;
+            }
+            span {
+              font-size: 14px;
+            }
+          }
+        }
+        .second,
+        .third {
+          img {
+            width: 90px;
+            height: auto;
+            top: -40%;
+          }
+        }
+        .first {
+          height: 147.323px;
+          margin: 0 11px;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}
