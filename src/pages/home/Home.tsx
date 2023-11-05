@@ -7,6 +7,7 @@ import {
   Faq,
   Partners,
   Prices,
+  Privacy,
 } from "../../components";
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
       <Faq />
       <Prices />
       <Partners />
+      <Privacy />
     </main>
   );
 };

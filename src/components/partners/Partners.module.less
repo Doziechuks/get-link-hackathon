@@ -7,6 +7,9 @@
   align-items: center;
   justify-content: center;
   padding: 5rem 0;
+  @media screen and (max-width: 1024px) {
+    padding: 2rem 4rem;
+  }
   @media screen and (max-width: 600px) {
     padding: 2rem;
   }
@@ -60,6 +63,7 @@
   .logoswrapper {
     border-radius: 5px;
     border: 1px solid var(--light-purple-color);
+    // border: 1px red solid;
     width: 100%;
     max-width: 62.5rem;
     height: 35rem;
@@ -121,8 +125,14 @@
         }
       }
     }
-    @media screen and (max-width: 768px) {
-      padding: 5rem;
+    @media screen and (max-width: 950px) {
+      padding: 3rem;
+      height: 20rem;
+      div {
+        img {
+          width: 5rem;
+        }
+      }
     }
     @media screen and (max-width: 600px) {
       max-width: 100%;

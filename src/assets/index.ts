@@ -28,3 +28,6 @@ export { default as trophy } from "./trophy.png";
 export { default as gold_medal } from "./gold_medal 1.png";
 export { default as silver_medal } from "./silver_medal 1.png";
 export { default as bronze_medal } from "./bronze_medal 1.png";
+export { default as lock } from "./lock.png";
+export { default as shield } from "./shield.png";
+export { default as listImg } from "./listimg.svg";

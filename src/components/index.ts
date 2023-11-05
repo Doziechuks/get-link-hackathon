@@ -8,3 +8,4 @@ export { default as Criteria } from "./criteria/Criteria";
 export { default as Faq } from "./faq/Faq";
 export { default as Partners } from "./partners/Partner";
 export { default as Prices } from "./prices/Prices";
+export { default as Privacy } from "./privacy/Privacy";
