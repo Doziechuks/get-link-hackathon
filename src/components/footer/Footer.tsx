@@ -1,5 +1,6 @@
+import { useState, useEffect } from "react";
 import styles from "./Footer.module.less";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   faceebook,
   instagram,
@@ -10,8 +11,16 @@ import {
 } from "../../assets";
 
 const Footer = () => {
+  const [pathName, setPathName] = useState("");
+  const { pathname } = useLocation();
+  useEffect(() => {
+    setPathName(pathname);
+  }, [pathname]);
   return (
-    <footer className={styles.container}>
+    <footer
+      className={styles.container}
+      style={{ display: `${pathName !== "/" ? "none" : "flex"}` }}
+    >
       <section className={styles.wrapper}>
         <div className={styles.about}>
           <div className={styles.title}>

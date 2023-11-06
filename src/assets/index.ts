@@ -31,3 +31,4 @@ export { default as bronze_medal } from "./bronze_medal 1.png";
 export { default as lock } from "./lock.png";
 export { default as shield } from "./shield.png";
 export { default as listImg } from "./listimg.svg";
+export { default as registerImage } from "./registerImage.png";

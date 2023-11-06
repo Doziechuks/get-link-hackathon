@@ -9,3 +9,7 @@ export { default as Faq } from "./faq/Faq";
 export { default as Partners } from "./partners/Partner";
 export { default as Prices } from "./prices/Prices";
 export { default as Privacy } from "./privacy/Privacy";
+export { default as Loader } from "./loader/Loader";
+export { default as RegisterationForm } from "./registerForm/RegisterForm";
+export { default as FormBox } from "./formBox/FormBox";
+export { default as CustomInput } from "./customInput/CustomInput";

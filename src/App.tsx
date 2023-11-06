@@ -2,7 +2,7 @@ import { Suspense, lazy } from "react";
 import "./App.less";
 import { Routes, Route } from "react-router-dom";
 
-import { Navbar, Footer } from "./components";
+import { Navbar, Footer, Loader } from "./components";
 
 const Home = lazy(() => import("./pages/home/Home"));
 const Register = lazy(() => import("./pages/register/Register"));
@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route caseSensitive path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
