@@ -1,5 +1,5 @@
 import { useState, ChangeEvent, FormEvent, useEffect } from "react";
-import { CustomButton, CustomInput, CustomSelectInput } from "..";
+import { CustomButton, CustomInput, CustomSelectInput, FormLoader } from "..";
 import styles from "./FormBox.module.less";
 import { axiosRequest } from "../../axiosInstance";
 
@@ -22,8 +22,8 @@ const FormBox = ({ setOpenModal }: ModalProp) => {
   const [category, setCategory] = useState("Select your category");
   const [categoryOptions, setCategoryOptions] = useState<CategoryProps[]>([]);
   const [group_size, setGroup_size] = useState(0);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleCheckBox = () => {
     setisChecked((prev) => !prev);
@@ -45,6 +45,7 @@ const FormBox = ({ setOpenModal }: ModalProp) => {
       ...currentUser,
       [name]: value,
     }));
+    setError("");
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -54,6 +55,7 @@ const FormBox = ({ setOpenModal }: ModalProp) => {
       "Content-Type": "application/json",
     };
     try {
+      setIsLoading(true);
       const response = await axiosRequest.post(
         url,
         {
@@ -65,16 +67,20 @@ const FormBox = ({ setOpenModal }: ModalProp) => {
         { headers }
       );
       if (response) {
-        console.log(response);
+        setIsLoading(false);
+        // console.log(response);
         setOpenModal(true);
       }
     } catch (error: unknown) {
       if (typeof error === "string") {
-        console.log(error);
+        setError("Something went wrong!!");
+        // console.log(error);
       } else if (error instanceof Error) {
-        console.log(error.message);
+        setError("Something went wrong!!");
+        // console.log(error.message);
       }
     } finally {
+      setIsLoading(false);
       setUser(initialState);
       setCategory("Select your category");
       setGroup_size(0);
@@ -104,6 +110,8 @@ const FormBox = ({ setOpenModal }: ModalProp) => {
 
   return (
     <form className={styles.wrapper} onSubmit={handleSubmit}>
+      {error && <span className={styles.errorMessage}>{error}</span>}
+      {isLoading && <FormLoader />}
       <div className={styles.inputWrap}>
         <CustomInput
           label="Team’s Name"

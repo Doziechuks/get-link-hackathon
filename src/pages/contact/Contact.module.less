@@ -1,4 +1,111 @@
-.contianer {
-  border: 1px red solid;
+.container {
+  // border: 1px red solid;
   width: 100%;
+  min-height: calc(100vh - 10rem);
+  padding: 3rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8rem;
+  position: relative;
+  .closeBox {
+    display: none;
+  }
+  .addressWrapper {
+    // border: 1px red solid;
+    width: 100%;
+    max-width: 17rem;
+    margin-top: 4rem;
+    h3 {
+      color: var(--light-purple-color);
+      font-family: var(--heading-font-family);
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      margin-bottom: 1rem;
+    }
+    .info {
+      display: block;
+      color: #fff;
+      font-family: var(--text-font-family);
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      line-height: 1.3rem;
+    }
+    .smHandles {
+      // border: 1px red solid;
+      width: 100%;
+      margin-top: 1.5rem;
+      span {
+        display: block;
+        color: var(--light-purple-color);
+        font-family: var(--text-font-family);
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 1rem;
+      }
+      .smIcons {
+        // border: 1px red solid;
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        img {
+          width: 1.5rem;
+          height: 1.5rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    gap: 3rem;
+  }
+  @media screen and (max-width: 767px) {
+    .closeBox {
+      display: block;
+      position: absolute;
+      top: 3rem;
+      left: 3.2rem;
+    }
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    .addressWrapper {
+      h3 {
+        display: none;
+      }
+      .info {
+        display: none;
+      }
+      .smHandles {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        span {
+          font-size: 12px;
+        }
+        .smIcons {
+          align-items: center;
+          justify-content: center;
+          gap: 0;
+          img {
+            width: 1rem;
+            height: 1rem;
+            margin-right: 1rem;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
 }

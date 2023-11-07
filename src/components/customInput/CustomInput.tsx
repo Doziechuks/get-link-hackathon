@@ -2,14 +2,18 @@ import React from "react";
 import styles from "./CustomInput.module.less";
 
 interface CustomInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: string;
+  label?: string;
+  isContact?: boolean;
 }
 export const CustomInput: React.FC<CustomInputProps> = (props) => {
-  const { label, ...otherProps } = props;
+  const { label, isContact, ...otherProps } = props;
   return (
     <div className={styles.inputBox}>
       <label>{label}</label>
-      <input {...otherProps} />
+      <input
+        {...otherProps}
+        className={`${isContact && styles.contactInput}`}
+      />
     </div>
   );
 };
