@@ -41,7 +41,7 @@ const Navbar = () => {
       className={`${styles.container} ${
         pathName === "/contact" && styles.hideNavbar
       } ${pathName === "/register" && styles.hideRegisterNavbar}`}
-      data-aos="slide-down"
+      // data-aos="slide-down"
     >
       <Link to="/" className={styles.logo}>
         get<span>linked</span>
