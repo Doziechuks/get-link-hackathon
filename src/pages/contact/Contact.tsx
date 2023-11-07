@@ -7,9 +7,6 @@ const Contact = () => {
   const navigate = useNavigate();
   return (
     <main className={styles.container}>
-      <div className={styles.closeBox} onClick={() => navigate(-1)}>
-        <img src={backIcon} alt="close icon" />
-      </div>
       <div className={styles.addressWrapper}>
         <h3>Get in touch</h3>
         <span className={styles.info}>
@@ -33,6 +30,9 @@ const Contact = () => {
         </div>
       </div>
       <ContactFormBox />
+      <div className={styles.closeBox} onClick={() => navigate(-1)}>
+        <img src={backIcon} alt="close icon" />
+      </div>
     </main>
   );
 };

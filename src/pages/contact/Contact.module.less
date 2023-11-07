@@ -1,13 +1,13 @@
 .container {
-  border: 1px red solid;
+  // border: 11px red solid;
   width: 100%;
-  height: calc(100vh - 10rem);
+  min-height: calc(100vh - 5rem);
   padding: 3rem;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   gap: 8rem;
-  position: relative;
+  // position: relative;
   .closeBox {
     display: none;
   }
@@ -63,20 +63,21 @@
     }
   }
   @media screen and (max-width: 1000px) {
-    height: calc(100vh + 15rem);
     gap: 3rem;
   }
   @media screen and (max-width: 767px) {
-    .closeBox {
-      display: block;
-      position: absolute;
-      top: 3rem;
-      left: 3.2rem;
-    }
+    min-height: 100vh;
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
     gap: 0;
+    .closeBox {
+      display: block;
+      // border: 1px red solid;
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+
     .addressWrapper {
       h3 {
         display: none;
