@@ -2,12 +2,13 @@ import { ContactFormBox } from "../../components";
 import styles from "./Contact.module.less";
 import { faceebook, instagram, x, linkedin, backIcon } from "../../assets";
 import { useNavigate } from "react-router-dom";
+import "aos/dist/aos.css";
 
 const Contact = () => {
   const navigate = useNavigate();
   return (
     <main className={styles.container}>
-      <div className={styles.addressWrapper}>
+      <div className={styles.addressWrapper} data-aos="fade-right">
         <h3>Get in touch</h3>
         <span className={styles.info}>
           Contact <br /> Information
@@ -30,7 +31,11 @@ const Contact = () => {
         </div>
       </div>
       <ContactFormBox />
-      <div className={styles.closeBox} onClick={() => navigate(-1)}>
+      <div
+        className={styles.closeBox}
+        onClick={() => navigate(-1)}
+        data-aos="fade-right"
+      >
         <img src={backIcon} alt="close icon" />
       </div>
     </main>

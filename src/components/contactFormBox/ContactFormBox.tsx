@@ -2,6 +2,7 @@ import { useState, ChangeEvent, FormEvent } from "react";
 import { CustomButton, CustomInput, FormLoader } from "..";
 import styles from "./contactFormBox.module.less";
 import { axiosRequest } from "../../axiosInstance";
+import "aos/dist/aos.css";
 
 const initialState = {
   first_name: "",
@@ -60,7 +61,11 @@ const ContactFormBox = () => {
     }
   };
   return (
-    <section className={styles.container} onSubmit={handleSubmit}>
+    <section
+      className={styles.container}
+      onSubmit={handleSubmit}
+      data-aos="fade-left"
+    >
       <div className={styles.heading}>
         <h3>
           Questions or need assistance? <br /> Let us know about it!
