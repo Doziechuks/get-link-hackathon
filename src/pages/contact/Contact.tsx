@@ -8,7 +8,7 @@ const Contact = () => {
   const navigate = useNavigate();
   return (
     <main className={styles.container}>
-      <div className={styles.addressWrapper} data-aos="fade-right">
+      <div className={styles.addressWrapper}>
         <h3>Get in touch</h3>
         <span className={styles.info}>
           Contact <br /> Information
