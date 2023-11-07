@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./Navbar.module.less";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { menu, close } from "../../assets";
 import { CustomButton } from "..";
 import Aos from "aos";
@@ -9,7 +9,12 @@ import "aos/dist/aos.css";
 const Navbar = () => {
   const [openNavbar, setOpenNavbar] = useState(false);
   const navbarRef = useRef<HTMLDivElement | null>(null);
+  const [pathName, setPathName] = useState("");
+  const { pathname } = useLocation();
 
+  useEffect(() => {
+    setPathName(pathname);
+  }, [pathname]);
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
@@ -32,7 +37,12 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={styles.container} data-aos="slide-down">
+    <nav
+      className={`${styles.container} ${
+        pathName === "/contact" && styles.hideNavbar
+      } ${pathName === "/register" && styles.hideRegisterNavbar}`}
+      data-aos="slide-down"
+    >
       <Link to="/" className={styles.logo}>
         get<span>linked</span>
       </Link>
