@@ -1,18 +1,29 @@
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { CustomButton, CustomInput, CustomSelectInput } from "..";
 import styles from "./FormBox.module.less";
+import { axiosRequest } from "../../axiosInstance";
 
+interface ModalProp {
+  setOpenModal: (param: boolean) => void;
+}
+interface CategoryProps {
+  id: string;
+  name: string;
+}
 const initialState = {
   team_name: "",
   phone_number: "",
   email: "",
   project_topic: "",
 };
-const FormBox = () => {
+const FormBox = ({ setOpenModal }: ModalProp) => {
   const [user, setUser] = useState(initialState);
   const [isChecked, setisChecked] = useState(false);
   const [category, setCategory] = useState("Select your category");
-  const [group_size, setGroup_size] = useState("Select");
+  const [categoryOptions, setCategoryOptions] = useState<CategoryProps[]>([]);
+  const [group_size, setGroup_size] = useState(0);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [error, setError] = useState(false);
 
   const handleCheckBox = () => {
     setisChecked((prev) => !prev);
@@ -24,7 +35,7 @@ const FormBox = () => {
     if (name === "category") {
       setCategory(value);
     } else if (name === "group_size") {
-      setGroup_size(value);
+      setGroup_size(Number(value));
     }
   };
 
@@ -36,21 +47,60 @@ const FormBox = () => {
     }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log({
-      name: user.team_name,
-      phone: user.phone_number,
-      email: user.email,
-      topic: user.project_topic,
-      category,
-      group_size,
-    });
-    setUser(initialState);
-    setCategory("Select your category");
-    setGroup_size("Select");
-    setisChecked(false);
+    const url = "/hackathon/registration";
+    const headers = {
+      "Content-Type": "application/json",
+    };
+    try {
+      const response = await axiosRequest.post(
+        url,
+        {
+          ...user,
+          group_size,
+          category,
+          privacy_poclicy_accepted: isChecked,
+        },
+        { headers }
+      );
+      if (response) {
+        console.log(response);
+        setOpenModal(true);
+      }
+    } catch (error: unknown) {
+      if (typeof error === "string") {
+        console.log(error);
+      } else if (error instanceof Error) {
+        console.log(error.message);
+      }
+    } finally {
+      setUser(initialState);
+      setCategory("Select your category");
+      setGroup_size(0);
+      setisChecked(false);
+    }
   };
+
+  useEffect(() => {
+    const getCategories = async () => {
+      try {
+        const response = await axiosRequest.get("/hackathon/categories-list");
+        if (response) {
+          // console.log(response.data);
+          setCategoryOptions(response.data);
+        }
+      } catch (error: unknown) {
+        if (typeof error === "string") {
+          console.log(error);
+        } else if (error instanceof Error) {
+          console.log(error.message);
+        }
+      }
+    };
+    getCategories();
+  }, []);
+  // console.log(categoryOptions);
 
   return (
     <form className={styles.wrapper} onSubmit={handleSubmit}>
@@ -102,9 +152,11 @@ const FormBox = () => {
           onChange={handleSelectChange}
         >
           <option value="Select your category">Select your category</option>
-          <option value="frontend">frontend</option>
-          <option value="backend">backend</option>
-          <option value="mobile">mobile</option>
+          {categoryOptions.map((item) => (
+            <option value={item.id} key={item.id}>
+              {item.name}
+            </option>
+          ))}
         </CustomSelectInput>
         <CustomSelectInput
           label="Group Size"
@@ -113,9 +165,9 @@ const FormBox = () => {
           onChange={handleSelectChange}
         >
           <option value="Select">Select</option>
-          <option value="2-3">2-3</option>
-          <option value="3-5">3-5</option>
-          <option value="5-10">5-10</option>
+          <option value={3}>3</option>
+          <option value={5}>5</option>
+          <option value={10}>10</option>
         </CustomSelectInput>
       </div>
 

@@ -12,4 +12,5 @@ export { default as Privacy } from "./privacy/Privacy";
 export { default as Loader } from "./loader/Loader";
 export { default as RegisterationForm } from "./registerForm/RegisterForm";
 export { default as FormBox } from "./formBox/FormBox";
+export { default as SuccessModal } from "./successfulRegistration/SuccessfulRegistration";
 export { CustomInput, CustomSelectInput } from "./customInput/CustomInput";

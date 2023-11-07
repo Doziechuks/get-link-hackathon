@@ -32,3 +32,4 @@ export { default as lock } from "./lock.png";
 export { default as shield } from "./shield.png";
 export { default as listImg } from "./listimg.svg";
 export { default as registerImage } from "./registerImage.png";
+export { default as successImg } from "./congratulation.png";
