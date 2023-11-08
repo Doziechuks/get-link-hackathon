@@ -9,7 +9,7 @@ import {
   spark,
   link,
   mobileCurve,
-  // bobble,
+  bobble,
   man,
 } from "../../assets";
 import { CustomButton } from "..";
@@ -60,9 +60,9 @@ const Header = () => {
         </div>
         <div className={styles.imgBox} data-aos="fade">
           <img src={man} alt="man" className={styles.man} />
-          {/* <div className={styles.bobble}>
+          <div className={styles.bobble}>
             <img src={bobble} alt="bobble light" />
-          </div> */}
+          </div>
         </div>
       </section>
     </header>
