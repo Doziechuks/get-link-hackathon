@@ -1,7 +1,7 @@
 import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { CustomButton, CustomInput, CustomSelectInput, FormLoader } from "..";
 import styles from "./FormBox.module.less";
-import { axiosRequest } from "../../axiosInstance";
+import { axiosRequest } from "../../misc/axiosInstance";
 
 interface ModalProp {
   setOpenModal: (param: boolean) => void;

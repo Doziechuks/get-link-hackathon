@@ -16,3 +16,4 @@ export { default as FormBox } from "./formBox/FormBox";
 export { default as ContactFormBox } from "./contactFormBox/ContactFormBox";
 export { default as SuccessModal } from "./successfulRegistration/SuccessfulRegistration";
 export { CustomInput, CustomSelectInput } from "./customInput/CustomInput";
+export { default as ScrollToTopBtn } from "./scrollToTop/ScrollToTop";

@@ -1,0 +1,46 @@
+.container {
+  width: 100%;
+  max-width: 3rem;
+  height: 3rem;
+  border-radius: 0.4rem;
+  background: linear-gradient(
+    270deg,
+    #903aff 0%,
+    #d434fe 56.42%,
+    #ff26b9 99.99%,
+    #fe34b9 100%
+  );
+  position: fixed;
+  bottom: -5rem;
+  right: -5rem;
+  z-index: 100;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+  transition: all 1s ease-in-out;
+  &:hover {
+    transform: rotate(0deg);
+  }
+
+  span {
+    display: block;
+    border: 2px white solid;
+    width: 1rem;
+    height: 1rem;
+    border-bottom: none;
+    border-right: none;
+    margin-top: 0.3rem;
+    margin-left: 0.3rem;
+    transition: all 1s ease-in-out;
+  }
+  &:hover span {
+    transform: rotate(45deg);
+    margin-top: 0.8rem;
+  }
+}
+.showBtn {
+  bottom: 2rem;
+  right: 2rem;
+}

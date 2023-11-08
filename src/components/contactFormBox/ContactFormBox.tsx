@@ -1,7 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { CustomButton, CustomInput, FormLoader } from "..";
 import styles from "./contactFormBox.module.less";
-import { axiosRequest } from "../../axiosInstance";
+import { axiosRequest } from "../../misc/axiosInstance";
 import "aos/dist/aos.css";
 
 const initialState = {
