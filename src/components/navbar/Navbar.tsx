@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./Navbar.module.less";
 import { Link, useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { menu, close } from "../../assets";
 import { CustomButton } from "..";
 import Aos from "aos";
@@ -15,6 +16,7 @@ const Navbar = () => {
   useEffect(() => {
     setPathName(pathname);
   }, [pathname]);
+
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
@@ -54,8 +56,15 @@ const Navbar = () => {
         <div className={styles.options}>
           <Link to="#">Timeline</Link>
           <Link to="#">Overview</Link>
-          <Link to="#">FAQs</Link>
-          <Link to="/contact">Contact</Link>
+          <HashLink smooth to="/faq#f">
+            FAQs
+          </HashLink>
+          <Link
+            to="/contact"
+            className={`${pathName.includes("/contact") && styles.active}`}
+          >
+            Contact
+          </Link>
         </div>
         <CustomButton>
           <Link to="/register">Register</Link>

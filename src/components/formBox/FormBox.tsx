@@ -2,6 +2,7 @@ import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { CustomButton, CustomInput, CustomSelectInput, FormLoader } from "..";
 import styles from "./FormBox.module.less";
 import { axiosRequest } from "../../misc/axiosInstance";
+import axios from "axios";
 
 interface ModalProp {
   setOpenModal: (param: boolean) => void;
@@ -89,9 +90,12 @@ const FormBox = ({ setOpenModal }: ModalProp) => {
   };
 
   useEffect(() => {
+    const cancelToken = axios.CancelToken.source();
     const getCategories = async () => {
       try {
-        const response = await axiosRequest.get("/hackathon/categories-list");
+        const response = await axiosRequest.get("/hackathon/categories-list", {
+          cancelToken: cancelToken.token,
+        });
         if (response) {
           // console.log(response.data);
           setCategoryOptions(response.data);
@@ -100,11 +104,17 @@ const FormBox = ({ setOpenModal }: ModalProp) => {
         if (typeof error === "string") {
           console.log(error);
         } else if (error instanceof Error) {
+          if (axios.isCancel(error)) {
+            console.log("request cancelled");
+          }
           console.log(error.message);
         }
       }
     };
     getCategories();
+    return () => {
+      cancelToken.cancel();
+    };
   }, []);
   // console.log(categoryOptions);
 
