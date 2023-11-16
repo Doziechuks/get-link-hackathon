@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 const initialState = {
   first_name: "",
   email: "",
-  phone_number: 0,
+  phone_number: "",
 };
 const ContactFormBox = () => {
   const [user, setUser] = useState(initialState);
