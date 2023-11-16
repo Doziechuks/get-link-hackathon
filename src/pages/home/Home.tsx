@@ -1,4 +1,3 @@
-import styles from "./Home.module.less";
 import {
   Criteria,
   Header,
@@ -8,20 +7,22 @@ import {
   Partners,
   Prices,
   Privacy,
+  TimeLine,
 } from "../../components";
 
 const Home = () => {
   return (
-    <main className={styles.container}>
+    <>
       <Header />
       <Idea />
       <Rules />
       <Criteria />
       <Faq />
+      <TimeLine />
       <Prices />
       <Partners />
       <Privacy />
-    </main>
+    </>
   );
 };
 

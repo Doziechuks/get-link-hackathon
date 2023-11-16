@@ -1,6 +1,12 @@
 import { useEffect } from "react";
 import styles from "./Prices.module.less";
-import { trophy, gold_medal, silver_medal, bronze_medal } from "../../assets";
+import {
+  trophy,
+  gold_medal,
+  silver_medal,
+  bronze_medal,
+  purpleLens,
+} from "../../assets";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -19,6 +25,9 @@ const Prices = () => {
         </p>
       </div>
       <div className={styles.wrapper}>
+        <div className={styles.background}>
+          <img src={purpleLens} alt="" />
+        </div>
         <div className={styles.trophyBox} data-aos="fade-up">
           <img src={trophy} alt="trophy" />
         </div>
