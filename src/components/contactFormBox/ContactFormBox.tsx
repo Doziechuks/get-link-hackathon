@@ -14,6 +14,7 @@ const ContactFormBox = () => {
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -45,6 +46,7 @@ const ContactFormBox = () => {
       );
       if (response) {
         setIsLoading(false);
+        setSuccess(true);
       }
     } catch (error: unknown) {
       if (typeof error === "string") {
@@ -76,6 +78,9 @@ const ContactFormBox = () => {
       </div>
       {error && <span className={styles.errorMessage}>{error}</span>}
       {isLoading && <FormLoader />}
+      {success && (
+        <span className={styles.success}>Thank you for contacting us!!</span>
+      )}
       <form className={styles.formWrapper}>
         <CustomInput
           placeholder="First Name"

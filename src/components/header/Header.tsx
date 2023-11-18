@@ -19,7 +19,7 @@ const Header = () => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <header className={styles.container}>
+    <header className={styles.container} id="overview">
       <div className={styles.highlight} data-aos="slide-left">
         <span>Igniting a Revolution in HR Innovation</span>
         <img src={curve} alt="curve icon" className={styles.desktop} />

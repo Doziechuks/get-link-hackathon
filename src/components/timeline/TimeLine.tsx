@@ -8,7 +8,7 @@ const TimeLine = () => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="timeline">
       <div className={styles.headingBox} data-aos="fade-up">
         <h3>Timeline</h3>
         <p>

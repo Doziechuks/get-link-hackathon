@@ -9,7 +9,7 @@ const Faq = () => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <section className={styles.container} id="f">
+    <section className={styles.container} id="faq">
       <div className={styles.faqWrapper}>
         <div className={styles.titleWrapper}>
           <h3 data-aos="fade-up">

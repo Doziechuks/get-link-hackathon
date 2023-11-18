@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./Navbar.module.less";
 import { Link, useLocation } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 import { menu, close } from "../../assets";
 import { CustomButton } from "..";
 import Aos from "aos";
@@ -54,11 +53,9 @@ const Navbar = () => {
         style={{ left: openNavbar ? 0 : "-100%" }}
       >
         <div className={styles.options}>
-          <Link to="#">Timeline</Link>
-          <Link to="#">Overview</Link>
-          <HashLink smooth to="/faq#f">
-            FAQs
-          </HashLink>
+          <a href="#timeline">Timeline</a>
+          <a href="#overview">Overview</a>
+          <a href="#faq">FAQs</a>
           <Link
             to="/contact"
             className={`${pathName.includes("/contact") && styles.active}`}
